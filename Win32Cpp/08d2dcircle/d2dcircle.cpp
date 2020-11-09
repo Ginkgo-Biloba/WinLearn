@@ -431,8 +431,8 @@ LRESULT MainWindow::handle_message(UINT msg, WPARAM wp, LPARAM lp)
 			D2D1_FACTORY_TYPE_SINGLE_THREADED, &factory)))
 			return -1;
 		factory->GetDesktopDpi(&p2d.x, &p2d.y);
-		p2d.x /= 96.F;
-		p2d.y /= 96.F;
+		p2d.x = 96.F / p2d.x;
+		p2d.y = 96.F / p2d.y;
 		return 0;
 
 	case WM_DESTROY:

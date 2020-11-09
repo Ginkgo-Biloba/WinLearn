@@ -28,9 +28,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="DeclareDPIAware.manifest" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="input.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>

@@ -5,7 +5,6 @@ class GraphicScene
 protected:
 	CComPtr<ID2D1Factory> factory;
 	CComPtr<ID2D1HwndRenderTarget> target;
-	float p2dX, p2dY;
 
 	virtual HRESULT create_device_independent_resource() = 0;
 	virtual HRESULT release_device_independent_resource() = 0;
@@ -16,18 +15,8 @@ protected:
 
 	HRESULT create_graphic_resource(HWND wnd);
 
-	float pixel2dipX(float val) const
-	{
-		return val * p2dX;
-	}
-
-	float pixel2dipY(float val) const
-	{
-		return val * p2dY;
-	}
-
 public:
-	GraphicScene() : p2dX(1.F), p2dY(1.F) {}
+	GraphicScene() {}
 	virtual ~GraphicScene() {}
 
 	HRESULT create();
