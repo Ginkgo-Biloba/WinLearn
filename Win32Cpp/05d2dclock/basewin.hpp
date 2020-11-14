@@ -87,7 +87,7 @@ LRESULT BaseWindow<T>::WindowProc(HWND wnd, UINT msg, WPARAM wp, LPARAM lp)
 
 	if (msg == WM_NCCREATE)
 	{
-		CREATESTRUCT* cs = reinterpret_cast<CREATESTRUCT*>(lp);
+		CREATESTRUCTW* cs = reinterpret_cast<CREATESTRUCTW*>(lp);
 		m = reinterpret_cast<T*>(cs->lpCreateParams);
 		SetWindowLongPtrW(wnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(m));
 		m->wnd = wnd;

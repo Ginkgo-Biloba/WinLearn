@@ -544,9 +544,9 @@ void MainWindow::set_mode(int m)
 	wchar_t* hc = nullptr;
 	switch (mode)
 	{
-	case MODE_DRAW:   hc = IDC_CROSS; break;
+	case MODE_DRAW:   hc = IDC_CROSS;   break;
 	case MODE_DRAG:   hc = IDC_SIZEALL; break;
-	case MODE_SELECT: hc = IDC_HAND; break;
+	case MODE_SELECT: hc = IDC_HAND;    break;
 	}
 	cursor = LoadCursorW(NULL, hc);
 	SetCursor(cursor);
