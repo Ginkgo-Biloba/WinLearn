@@ -117,12 +117,14 @@ void Clock::render_scene()
 	SYSTEMTIME t;
 	GetLocalTime(&t);
 
+	float MS = t.wMilliseconds;
 	float S = t.wSecond + t.wMilliseconds * 1e-3F;
 	float M = t.wMinute + t.wSecond / 60.F;
 	float H = t.wHour + t.wMinute / 60.F;
 	draw_hand(0.5F, 360.F / 12.F * H, 5.F);
 	draw_hand(0.7F, 360.F / 60.F * M, 3.F);
-	draw_hand(0.9F, 360.F / 60.F * S, 1.F);
+	draw_hand(0.9F, 360.F / 60.F * S, 2.F);
+	draw_hand(1.0F, 360.F / 1000.F * MS, 1.F);
 
 	target->SetTransform(d2d::Matrix3x2F::Identity());
 	target->FillEllipse(d2d::Ellipse(ellipse.point, 2, 2), brushstroke);
@@ -169,7 +171,7 @@ BOOL MainWindow::init_timer()
 		return FALSE;
 
 	LARGE_INTEGER li = { 0 };
-	if (!SetWaitableTimer(timer, &li, 33, NULL, NULL, FALSE))
+	if (!SetWaitableTimer(timer, &li, 5, NULL, NULL, FALSE))
 	{
 		CloseHandle(timer);
 		timer = NULL;

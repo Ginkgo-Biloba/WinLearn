@@ -28,7 +28,7 @@ static void PopUpError(wchar_t const* info)
 }
 
 
-// frome OpenCV window_w32.cpp
+// from OpenCV window_w32.cpp
 static void FillBitmapInfo(BITMAPINFO* bmi, int width, int height, int bpp, int origin)
 {
 	assert(bmi && width >= 0 && height >= 0 && (bpp == 8 || bpp == 24 || bpp == 32));
@@ -409,7 +409,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR cmdline, int cmdshow)
 
 	MyWnd m;
 	if (!(m.Create(
-		L"Bitmap Capture - 你好 ཁམས་བཟང་། こんにちは 안녕하세요",
+		L"AlphaBlend - 你好 ཁམས་བཟང་། こんにちは 안녕하세요",
 		WS_OVERLAPPEDWINDOW, 0,
 		CW_USEDEFAULT, CW_USEDEFAULT, 600, 600)))
 	{
