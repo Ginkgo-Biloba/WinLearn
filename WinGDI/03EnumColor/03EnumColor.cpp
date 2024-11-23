@@ -38,7 +38,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR cmdline, int cmdshow)
 	COLORREF* color = reinterpret_cast<COLORREF*>(
 		HeapAlloc(heap, 0, sizeof(color[0]) * (count + 1)));
 	color[0] = count;
-	EnumObjects(dc, OBJ_PEN,  MyEnumProc, reinterpret_cast<LPARAM>(color));
+	EnumObjects(dc, OBJ_PEN, MyEnumProc, reinterpret_cast<LPARAM>(color));
 	color[0] = count;
 
 	CStringW E;

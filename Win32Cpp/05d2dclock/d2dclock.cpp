@@ -98,7 +98,7 @@ void Clock::render_scene()
 		d2d::GradientStop(0.0, d2d::ColorF(d2d::ColorF::CadetBlue)),
 		d2d::GradientStop(1.0, d2d::ColorF(d2d::ColorF::DarkSeaGreen))
 	};
-	CComPtr< ID2D1GradientStopCollection> coll;
+	CComPtr<ID2D1GradientStopCollection> coll;
 	D2D1_RADIAL_GRADIENT_BRUSH_PROPERTIES prop =
 		d2d::RadialGradientBrushProperties(ellipse.point, d2d::Point2F(), ellipse.radiusX, ellipse.radiusY);
 	HRESULT ret = target->CreateGradientStopCollection(grad, 2, &coll);

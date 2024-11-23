@@ -100,7 +100,7 @@ MainWindow::MainWindow()
 {
 	A = d2d::Point2F(0, 0);
 	p2d.x = p2d.y = 1.F;
-	colors = 
+	colors =
 	{
 		d2d::ColorF::AliceBlue,
 		d2d::ColorF::AntiqueWhite,
@@ -573,13 +573,9 @@ void MainWindow::save_image()
 		st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
 	OutputDebugStringW(name.GetString());
 	name.Truncate(name.GetLength() - 1);
-	/*
-	D2D1_BITMAP_PROPERTIES prop = d2d::BitmapProperties(
-		d2d::PixelFormat(DXGI_FORMAT_B8G8R8X8_TYPELESS, D2D1_ALPHA_MODE_IGNORE));
-	CComPtr<ID2D1Bitmap> dst;
-	HRESULT ret = target->CreateBitmap(target->GetPixelSize(), NULL, 0, prop, &dst);
-	D2D1_PIXEL_FORMAT pixel = target->GetPixelFormat();
-	*/
+	HDC dc = GetDC(wnd);
+	save(dc, name);
+	ReleaseDC(wnd, dc);
 }
 
 ////////////////////  ////////////////////
